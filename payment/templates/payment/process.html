@@ -1,0 +1,46 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Pay by credit card{% endblock %}
+
+{% block content %}
+
+<style>
+  iframe {
+    height: 700px !important;
+
+}
+</style>
+
+
+<script src="https://pay.fondy.eu/static_common/v1/checkout/ipsp.js"></script>
+
+<script>
+function checkoutInit(url) {
+	$ipsp('checkout').scope(function() {
+		this.setCheckoutWrapper('#checkout_wrapper');
+		this.addCallback(__DEFAULTCALLBACK__);
+		this.action('show', function(data) {
+			$('#checkout_loader').remove();
+			$('#checkout').show();
+		});
+		this.action('hide', function(data) {
+			$('#checkout').hide();
+		});
+		this.action( function(data) {
+			$('#checkout_wrapper').width(110000).height(110000);
+		});
+		this.loadUrl(url);
+	});
+};
+var button = $ipsp.get("button");
+button.setMerchantId(1396424);
+button.setAmount({{order.get_total_cost}}, 'USD', true);
+button.setHost('pay.fondy.eu');
+checkoutInit(button.getUrl());
+</script>
+
+
+<div id="checkout" >
+	<div id="checkout_wrapper"></div>
+</div>
+{% endblock %}
