@@ -19,6 +19,16 @@ a:hover {
     color:#41464b;
 }
 
+span.fs-4{
+    color:white;
+}
+
+.nav-link {
+    color: white !important;
+
+}
+
+
 a.button, input[type="submit"] {
     color:#fff;
     background:#41464b;
