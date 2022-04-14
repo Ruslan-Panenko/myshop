@@ -32,3 +32,20 @@ def product_detail(request, id, slug):
                   'shop/product/detail.html',
                   {'product': product,
                    'cart_product_form': cart_product_form})
+
+
+
+def about(request):
+    return render(request, 'shop/headerpage/about.html')
+
+
+
+def delivery(request):
+    return render(request, 'shop/headerpage/deliver.html')
+
+
+def back(request):
+    return render(request, 'shop/headerpage/back.html')
+
+def garant(request):
+    return render(request, 'shop/headerpage/garant.html')

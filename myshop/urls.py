@@ -2,9 +2,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from shop import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('about/', views.about),
+    path('delivery/', views.delivery),
+    path('back/', views.back),
+    path('garant/', views.garant),
+
     path('cart/', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
     path('payment/', include('payment.urls', namespace='payment')),
