@@ -19,15 +19,17 @@
     <header class="d-flex flex-wrap justify-content-center py-3 mb-2 p-3 bg-dark text-white">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-        <span class="fs-4">Divanchik</span>
+        <span class="fs-4"><img src="{% static "img/logo.png" %}" style="padding-bottom: 20px;
+margin-top: -20px;
+margin-bottom: -30px;"></span>
       </a>
 
       <ul class="nav nav-pills">
 
-        <li class="nav-item"><a href="/about" class="nav-link">О нас</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link">Про нас</a></li>
         <li class="nav-item"><a href="/delivery" class="nav-link">Доставка</a></li>
-        <li class="nav-item"><a href="/back" class="nav-link">Условия возврата</a></li>
-        <li class="nav-item"><a href="/garant" class="nav-link">Гарантийное обслуживание</a></li>
+        <li class="nav-item"><a href="/back" class="nav-link">Умови поверненя</a></li>
+        <li class="nav-item"><a href="/garant" class="nav-link">Гарантійне обслуговування</a></li>
         <li class="nav-item"><div id="subheader">
 
         {% with total_items=cart|length %}
@@ -37,7 +39,7 @@
           </a>
 
             <a class="bg-dark" href="{% url "cart:cart_detail" %}" >
-              ${{ cart.get_total_price }}
+              {{ cart.get_total_price }}
             </a>
           {% else %}
                       <a href="{% url "cart:cart_detail" %}" >
@@ -69,7 +71,7 @@
       <div class="row mt-4">
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Консультации и заказ</h5>
+          <h5 class="text-uppercase">Консультація</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
@@ -108,15 +110,15 @@
 
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Электронная почта</h5>
+          <h5 class="text-uppercase">Поштова скринька</h5>
 
           <ul class="list-unstyled">
             <li>
-              <a href="#!" class="text-white">Основная:
+              <a href="#!" class="text-white">Головна:
 info@divanchik.ua</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Техническая поддержка:
+              <a href="#!" class="text-white">Тех. підтримка:
 savchenko.ilya.2002@gmail.com</a>
             </li>
 
@@ -126,14 +128,14 @@ savchenko.ilya.2002@gmail.com</a>
 
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">График работы</h5>
+          <h5 class="text-uppercase">Графік работи</h5>
 
           <ul class="list-unstyled">
             <li>
               <a href="#!" class="text-white"><i class="fas fa-at fa-fw fa-sm me-2"></i>с 9:00 до 19:00</a>
             </li>
             <li>
-              <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>без выходных</a>
+              <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>без вихідних</a>
             </li>
 
           </ul>

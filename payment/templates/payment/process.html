@@ -34,7 +34,7 @@ function checkoutInit(url) {
 };
 var button = $ipsp.get("button");
 button.setMerchantId(1396424);
-button.setAmount({{order.get_total_cost}}, 'USD', true);
+button.setAmount({{order.get_total_cost}}, 'UAH', true);
 button.setHost('pay.fondy.eu');
 checkoutInit(button.getUrl());
 </script>

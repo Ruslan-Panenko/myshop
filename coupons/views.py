@@ -11,7 +11,7 @@ def coupon_apply(request):
     now = timezone.now()
     form = CouponApplyForm(request.POST)
     if form.is_valid():
-        code = form.cleaned_data['code']
+        code = form.cleaned_data['Код']
         try:
             coupon = Coupon.objects.get(code__iexact=code,
                                     valid_from__lte=now,
